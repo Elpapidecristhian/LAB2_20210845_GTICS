@@ -15,7 +15,6 @@
     <th>Empresa Aseguradora</th>
     <th>Cobertura Máx</th>
     <th>Tarifa</th>
-    <th>Editar</th>
     <th>Eliminar</th>
   </tr>
   </thead>
@@ -25,7 +24,6 @@
     <td th:text="${seguro.empresaAseguradora}"></td>
     <td th:text="${seguro.coberturaMax}"></td>
     <td th:text="${seguro.tarifa}"></td>
-    <td><a th:href="@{'/seguros/editar/' + ${seguro.idseguro}}">Editar</a></td>
     <td><a th:href="@{'/seguros/eliminar/' + ${seguro.idseguro}}">Eliminar</a></td>
   </tr>
   </tbody>
