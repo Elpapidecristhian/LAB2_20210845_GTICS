@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista de Seguros</title>
+</head>
+<body>
+<h1>Lista de Seguros</h1>
+
+<a href="/seguros/nuevo">Agregar Elemento</a>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Empresa Aseguradora</th>
+    <th>Cobertura Máx</th>
+    <th>Tarifa</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="seguro : ${listaSeguros}">
+    <td th:text="${seguro.idseguro}"></td>
+    <td th:text="${seguro.empresaAseguradora}"></td>
+    <td th:text="${seguro.coberturaMax}"></td>
+    <td th:text="${seguro.tarifa}"></td>
+    <td><a th:href="@{'/seguros/editar/' + ${seguro.idseguro}}">Editar</a></td>
+    <td><a th:href="@{'/seguros/eliminar/' + ${seguro.idseguro}}">Eliminar</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
