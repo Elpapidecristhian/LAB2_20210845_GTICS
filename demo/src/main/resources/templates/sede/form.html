@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Registrar sede</title>
+</head>
+<body>
+<h1>Registrar sede</h1>
+
+<form th:action="@{/sede/guardar}" th:object="${sede}" method="post">
+  <label>Distrito:</label>
+
+  <label>Dirección:</label>
+
+  <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

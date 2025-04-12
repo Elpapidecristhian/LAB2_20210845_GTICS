@@ -21,4 +21,6 @@ public class SedeController {
         model.addAttribute("listaSedes", lista);
         return "sede/lista";
     }
+
+
 }
