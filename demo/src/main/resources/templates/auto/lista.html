@@ -17,7 +17,6 @@
         <th>Kilometraje</th>
         <th>Sede ID</th>
         <th>Costo por día</th>
-        <th>Editar</th>
         <th>Eliminar</th>
     </tr>
     </thead>
@@ -29,7 +28,6 @@
         <td th:text="${auto.kilometraje}"></td>
         <td th:text="${auto.sedeIdsede}"></td>
         <td th:text="${auto.costoPorDia}"></td>
-        <td><a th:href="@{'/autos/editar/' + ${auto.idauto}}">Editar</a></td>
         <td><a th:href="@{'/autos/eliminar/' + ${auto.idauto}}">Eliminar</a></td>
     </tr>
     </tbody>
