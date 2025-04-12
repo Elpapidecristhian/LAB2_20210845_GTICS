@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,4 +23,17 @@ public class AutoController {
         model.addAttribute("listaAutos", lista);
         return "auto/lista";
     }
+
+    @GetMapping("/autos/nuevo")
+    public String nuevoAuto(Model model) {
+        model.addAttribute("auto", new Auto());
+        return "auto/form";
+    }
+
+    @PostMapping("/autos/guardar")
+    public String guardarAuto(@ModelAttribute("auto") Auto auto) {
+        autoRepository.save(auto);
+        return "redirect:/autos";
+    }
+
 }
